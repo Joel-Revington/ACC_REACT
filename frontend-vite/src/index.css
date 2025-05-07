@@ -1,0 +1,31 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: ArtifaktElement, Arial, sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: #6d4f3e;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 50vh;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6d4f3e;
+  border-radius: 50vh;
+}

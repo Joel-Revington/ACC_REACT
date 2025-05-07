@@ -1,0 +1,39 @@
+{
+  "name": "aps-hubs-browser-nodejs",
+  "version": "1.0.0",
+  "description": "Autodesk Platform Services application built by following the Hubs Browser tutorial from https://aps.autodesk.com/tutorials.",
+  "scripts": {
+    "start": "nodemon server.js",
+    "build": "babel server.js --out-file dist/server.js"
+  },
+  "keywords": [
+    "autodesk-platform-services"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@aps_sdk/authentication": "0.1.0-beta.1",
+    "@aps_sdk/autodesk-sdkmanager": "0.0.7-beta.1",
+    "@aps_sdk/data-management": "0.1.0-beta.1",
+    "@supabase/supabase-js": "^2.45.4",
+    "archiver": "^7.0.1",
+    "axios": "^1.7.3",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "inspire-tree": "^4.3.1",
+    "inspire-tree-dom": "^4.0.6",
+    "jszip": "^3.10.1",
+    "mssql": "^11.0.1",
+    "nodemon": "^3.1.9",
+    "react-chat-widget": "^3.1.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.2"
+  }
+}

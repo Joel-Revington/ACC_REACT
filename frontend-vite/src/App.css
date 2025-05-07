@@ -1,0 +1,226 @@
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  width: 25%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  width: 25%;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: #222831;
+  color: aliceblue;
+}
+
+.preview {
+  position: relative;
+  width: 55%;
+  flex: 1;
+}
+
+.side-header {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.backup {
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+  height: 70%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.side-header .logo {
+  width: 75%;
+  height: 55%;
+  object-fit: contain;
+}
+
+.title {
+  font-weight: bold;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tree {
+  margin: 0.5em;
+}
+
+.login-button {
+  font-family: ArtifaktElement, Arial, sans-serif;
+  width: 70%;
+  font-size: 1.2em;
+  padding: 2px 4px;
+  background-color: #222831;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.backup-button {
+  font-family: ArtifaktElement, Arial, sans-serif;
+  font-size: 1.2em;
+  background-color: #222831;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.backup-button:disabled {
+  cursor: not-allowed;
+}
+
+.select-dropdown {
+  font-family: ArtifaktElement, Arial, sans-serif;
+  font-size: 1.2em;
+  background-color: #222831;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+/* Icon styles */
+.icon-hub:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/apps-16.svg);
+  background-size: cover;
+}
+
+.icon-project:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/project-16.svg);
+  background-size: cover;
+}
+
+.icon-my-folder:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/file-directory-16.svg);
+  background-size: cover;
+}
+
+.icon-item:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/file-16.svg);
+  background-size: cover;
+}
+
+.icon-version:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/clock-16.svg);
+  background-size: cover;
+}
+
+/* Modal styles */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px 40px 25px 40px;
+  border-radius: 5px;
+  width: 350px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+  padding: 10px;
+  margin: 0px;
+  width: 100%;
+  font-size: medium;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content input[type="text"]:focus,
+.modal-content input[type="password"]:focus {
+  outline: none;
+}
+
+.modal-content button {
+  padding: 10px 30px;
+  font-size: large;
+  margin-top: 10px;
+  width: max-content;
+  background-color: #262626;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Spinner styles */
+.spinner-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #000000;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    top: 3em;
+    bottom: 75%;
+  }
+
+  .preview {
+    width: 100%;
+    top: 25%;
+    bottom: 0;
+  }
+}

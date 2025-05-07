@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  acc_backup:
+    image: 339713031143.dkr.ecr.ap-south-1.amazonaws.com/acc_backup:latest
+    container_name: acc_backup
+    ports:
+      - "8080:8080"
+    environment:
+      APS_CLIENT_ID: ${APS_CLIENT_ID}
+      APS_CLIENT_SECRET: ${APS_CLIENT_SECRET}
+      APS_CALLBACK_URL: ${APS_CALLBACK_URL}
+      SERVER_SESSION_SECRET: ${SERVER_SESSION_SECRET}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_SERVER: ${DB_SERVER}
+      DB_DATABASE: ${DB_DATABASE}
+      NODE_ENV: "production"
+    restart: always
