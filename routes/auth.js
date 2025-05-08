@@ -13,7 +13,7 @@ router.get('/api/auth/logout', function (req, res) {
 });
 
 router.get('/api/auth/callback', authCallbackMiddleware, function (req, res) {
-    res.redirect('/');
+    res.redirect('http://localhost:5173/');
 });
 
 router.get('/api/auth/token', authRefreshMiddleware, function (req, res) {

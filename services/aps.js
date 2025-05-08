@@ -98,8 +98,14 @@ service.getUserProfile = async (accessToken) => {
 };
 
 service.getHubs = async (accessToken) => {
-  const resp = await dataManagementClient.getHubs(accessToken);
-  return resp.data;
+  try {
+      const resp = await dataManagementClient.getHubs(accessToken);
+      // console.log('Raw APS Hubs Response:', JSON.stringify(resp.data, null, 2)); // Added logging
+      return resp.data;
+  } catch (error) {
+      console.error('Error fetching hubs from APS:', error);
+      throw error;
+  }
 };
 
 service.getProjects = async (hubId, accessToken) => {

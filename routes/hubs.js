@@ -24,14 +24,29 @@ router.get('/api/hubs/:hub_id/projects', async function (req, res, next) {
     }
 });
 
-router.get('/api/hubs/:hub_id/projects/:project_id/contents', async function (req, res, next) {
+// router.get('/api/hubs/:hub_id/projects/:project_id/contents', async function (req, res, next) {
+//     try {
+//         const contents = await getProjectContents(req.params.hub_id, req.params.project_id, req.query.folder_id, req.internalOAuthToken.access_token);
+//         res.json(contents);
+//     } catch (err) {
+//         next(err);
+//     }
+// });
+
+router.get('/api/hubs/:hub_id/projects/:project_id/folders/:folder_id/contents', async function (req, res, next) {
     try {
-        const contents = await getProjectContents(req.params.hub_id, req.params.project_id, req.query.folder_id, req.internalOAuthToken.access_token);
-        res.json(contents);
+      const contents = await getProjectContents(
+        req.params.hub_id,
+        req.params.project_id,
+        req.params.folder_id, // Get folderId from path parameter
+        req.internalOAuthToken.access_token
+      );
+      res.json(contents);
     } catch (err) {
-        next(err);
+      next(err);
     }
-});
+  });
+
 
 router.get('/api/hubs/:hub_id/projects/:project_id/contents/:item_id/versions', async function (req, res, next) {
     try {
