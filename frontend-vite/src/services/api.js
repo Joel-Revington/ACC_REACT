@@ -47,7 +47,7 @@ export async function fetchProjects(hubId) {
  */
 export async function fetchFolderContents(hubId, projectId, folderId) {
   try {
-    const response = await fetch(`/api/hubs/${hubId}/projects/${projectId}/contents?folder_id=${folderId}`);
+    const response = await fetch(`/api/hubs/${hubId}/projects/${projectId}/folders/${folderId}/contents`);
     if (!response.ok) {
       throw new Error(`Failed to fetch folder contents: ${response.statusText}`);
     }

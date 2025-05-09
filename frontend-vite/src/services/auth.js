@@ -22,25 +22,25 @@ export async function getProfile() {
    * Logout the current user
    * @returns {Promise<void>}
    */
-  export async function logout() {
-    try {
-      const response = await fetch('/api/auth/logout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+  // export async function logout() {
+  //   try {
+  //     const response = await fetch('/api/auth/logout', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       }
+  //     });
       
-      if (!response.ok) {
-        throw new Error(`Logout failed: ${response.statusText}`);
-      }
+  //     if (!response.ok) {
+  //       throw new Error(`Logout failed: ${response.statusText}`);
+  //     }
       
-      return true;
-    } catch (error) {
-      console.error('Error during logout:', error);
-      throw error;
-    }
-  }
+  //     return true;
+  //   } catch (error) {
+  //     console.error('Error during logout:', error);
+  //     throw error;
+  //   }
+  // }
   
   /**
    * Checks if the current user's token is still valid
