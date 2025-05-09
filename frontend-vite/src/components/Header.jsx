@@ -58,25 +58,45 @@ function Header({ user, onLogout, setShowSpinner }) { // Receives initiateAutode
   };
 
   return (
-    <div className="header">
-      <div className="side-header">
-        <img
-          className="logo"
-          src="https://d1nw187rmwcpt3.cloudfront.net/usam_logo-removebg-preview.webp"
-          alt="Autodesk Platform Services"
-        />
+    // <div className="header">
+    //   <div className="side-header">
+    //     <img
+    //       className="logo"
+    //       src="https://d1nw187rmwcpt3.cloudfront.net/usam_logo-removebg-preview.webp"
+    //       alt="Autodesk Platform Services"
+    //     />
+    //     <button
+    //       className="login-button"
+    //       // Use the local handleLogoutButtonClick function
+    //       onClick={user ? handleLogoutButtonClick : handleLogin}
+    //     >
+    //       {user ? `Logout (${user.name})` : 'Login'}
+    //     </button>
+    //   </div>
+
+    //   {/* BackupPanel shown only if user is logged in */}
+    //   {user && <BackupPanel setShowSpinner={setShowSpinner} />}
+    // </div>
+    <header className="bg-gray-50 shadow-sm w-[25%]">
+      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+        <div className="flex items-center gap-4">
+          <img
+            className="h-12 object-contain"
+            src="https://d3e25fyg0500ti.cloudfront.net/usam_logo.webp"
+            alt="Autodesk Platform Services"
+          />
+        </div>
         <button
-          className="login-button"
-          // Use the local handleLogoutButtonClick function
           onClick={user ? handleLogoutButtonClick : handleLogin}
+          className="px-4 py-2 text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition"
         >
           {user ? `Logout (${user.name})` : 'Login'}
         </button>
       </div>
 
-      {/* BackupPanel shown only if user is logged in */}
+      {/* Show backup panel when logged in */}
       {user && <BackupPanel setShowSpinner={setShowSpinner} />}
-    </div>
+    </header>
   );
 }
 

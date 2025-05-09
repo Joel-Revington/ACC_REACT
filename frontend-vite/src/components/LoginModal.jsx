@@ -93,16 +93,48 @@ function LoginModal({ onLogin }) {
   };
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h2>Login</h2>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <form onSubmit={handleSubmit}>
+    // <div className="modal">
+    //   <div className="modal-content">
+    //     <h2>Login</h2>
+    //     {error && <p style={{ color: 'red' }}>{error}</p>}
+    //     <form onSubmit={handleSubmit}>
+    //       <input
+    //         type="text"
+    //         name='email'
+    //         value={email}
+    //         onChange={(e) => setEmail(e.target.value)}
+    //         placeholder="Email"
+    //         required
+    //       />
+    //       <input
+    //         type="password"
+    //         value={password}
+    //         onChange={(e) => setPassword(e.target.value)}
+    //         placeholder="Password"
+    //         required
+    //       />
+    //       <button type="submit">Login</button>
+    //     </form>
+    //   </div>
+    // </div>
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md animate-fade-in">
+        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Welcome Back</h2>
+
+        {error && (
+          <div className="mb-4 text-red-500 text-sm text-center">
+            {error}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
-            type="text"
+            type="email"
+            name='email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
           <input
@@ -110,9 +142,15 @@ function LoginModal({ onLogin }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
-          <button type="submit">Login</button>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition duration-200"
+          >
+            Login
+          </button>
         </form>
       </div>
     </div>
